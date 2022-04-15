@@ -1,0 +1,26 @@
+﻿<Window x:Class="ExcelData.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExcelData"
+        mc:Ignorable="d"
+        Title="ExcelFunctionTesting" Height="720" Width="1280" MinHeight="720" MinWidth="1280">
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Выбрать файл" Width="200" Height="30" Cursor="Hand" Margin="5" Name="OpenExcelbtn" Click="OpenExcelbtn_Click"/>
+                <ComboBox Width="200" Height="30" Name="CBChooseList" SelectionChanged="CBChooseList_SelectionChanged"></ComboBox>
+            </StackPanel>
+           
+            <DataGrid x:Name="DbGrig" ItemsSource="{Binding}" Margin="10" Height="550" HorizontalScrollBarVisibility="Auto"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Сохранить" Width="200" Height="30" Margin="5" Name="SaveChangesbtn" Click="SaveChangesbtn_Click"></Button>
+                <Button Content="Расчёт пропусков" Width="200" Height="30" Margin="5" Name="CalcPassbtn" Click="CalcPassbtn_Click"></Button>
+            </StackPanel>
+            <TextBlock Name="TBInfo" Margin="5">"*" - пропуск по уважительной причине.</TextBlock>
+        </StackPanel>
+           
+        
+    </Grid>
+</Window>
